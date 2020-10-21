@@ -1,5 +1,7 @@
 .Stepper {
   display: flex;
+  flex-wrap: wrap;
+  margin: 0 50px;
 
   .point {
     margin: 10px;

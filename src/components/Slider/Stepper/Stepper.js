@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Stepper.module.scss'
-import {slides} from "../settingsSlider";
+import {slides} from "../../settingsSlider";
 
 const Stepper = ({activeIndex, setNewSlides}) => {
 

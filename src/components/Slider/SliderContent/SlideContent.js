@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import classes from './SlideContent.module.scss'
-import ContextSlider from "../../context";
 import SlideHeader from "./SlideHeader/SlideHeader";
+import {SliderContext} from '../../../context/sliderContext'
 
 const SlideContent = (props) => {
     const {
@@ -11,7 +11,47 @@ const SlideContent = (props) => {
         handlerOnDown,
         handlerOnUp,
 
-    } = useContext(ContextSlider)
+    } = useContext(SliderContext)
+
+    const content =
+        activeSlides.map((slide, index) => {
+
+                let mainBackground = {
+                    background: '#000'
+                }
+                if (slide.image) {
+                    mainBackground = {
+                        backgroundImage: `url(${slide.image})`
+                    }
+                }
+                if (slide.background) {
+                    mainBackground = {
+                        background: slide.background
+                    }
+                }
+
+
+                return (
+                    <div
+                        key={index}
+                        className={classes.content}
+                        style={mainBackground}
+                        onMouseDown={e => handlerOnDown(e.clientX)}
+                        onMouseUp={e => handlerOnUp(e.clientX)}
+                        onTouchStart={e => handlerOnDown(e.targetTouches[0].clientX)}
+                        onTouchEnd={e => handlerOnUp(e.changedTouches[0].clientX)}
+                    >
+                        {
+                            slide.header
+                            ?<SlideHeader header={slide.header}/>
+                            :null
+                        }
+
+
+                    </div>
+                )
+            }
+        )
 
 
     return (
@@ -22,22 +62,7 @@ const SlideContent = (props) => {
              }}
         >
             {
-                activeSlides.map((slide, index) =>
-                    <div
-                        key={index}
-                        className={classes.content}
-                        style={{
-                            backgroundImage: `url(${slide.image})`
-                        }}
-                        onMouseDown={e => handlerOnDown(e.clientX)}
-                        onMouseUp={e => handlerOnUp(e.clientX)}
-                        onTouchStart={e => handlerOnDown(e.targetTouches[0].clientX)}
-                        onTouchEnd={e => handlerOnUp(e.changedTouches[0].clientX)}
-                    >
-
-                        <SlideHeader header={slide.header}/>
-                    </div>
-                )
+                content
             }
 
         </div>
