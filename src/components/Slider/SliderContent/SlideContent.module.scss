@@ -1,0 +1,16 @@
+.SliderContent {
+  position: absolute;
+  display: flex;
+
+  .content {
+    width: 100vw;
+    height: 50vh;
+    cursor: ew-resize;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

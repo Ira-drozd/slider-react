@@ -1,0 +1,19 @@
+.Slider {
+  position: relative;
+  height: 50vh;
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+
+  .navbar{
+   // background: #FFFFFF;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    margin: 0 auto;
+    width: 100vw;
+    //right: 50%;
+  }
+}

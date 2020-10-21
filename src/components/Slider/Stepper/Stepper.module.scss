@@ -1,0 +1,21 @@
+.Stepper {
+  display: flex;
+
+  .point {
+    margin: 10px;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+
+    &:hover{
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    &.active {
+      background: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+}

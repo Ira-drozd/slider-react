@@ -1,0 +1,21 @@
+.NavButton {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 60px;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.next {
+    right: 0;
+  }
+
+  &.prev {
+    left: 0;
+  }
+}
