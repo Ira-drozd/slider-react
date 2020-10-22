@@ -2,7 +2,7 @@ import React, {useReducer} from 'react';
 import {SliderContext} from './sliderContext'
 import {sliderReducer} from './sliderReducer'
 import {settingTimeTransition, slides} from '../components/settingsSlider'
-import { SET_ACTIVE_INDEX, SET_ACTIVE_SLIDES, SET_POSITION, SET_TIME, SLIDING} from "./types";
+import {SET_ACTIVE_INDEX, SET_ACTIVE_SLIDES, SET_POSITION, SET_TIME, SLIDING} from "./types";
 
 export const SliderState = ({children}) => {
     const initialState = {
@@ -45,7 +45,6 @@ export const SliderState = ({children}) => {
     }
 
     const setNewSlides = (newIndex) => {
-
         const {nextIndex, prevIndex, maxIndex, centerActiveSlides, rightActiveSlides, leftActiveSlides} = getSlidesPosition(newIndex)
 
         if (slides[prevIndex] && slides[nextIndex]) {
@@ -87,11 +86,9 @@ export const SliderState = ({children}) => {
             }
             , settingTimeTransition
         )
-
     }
 
     const handlerOnDown = startX => {
-
         dispatch({
             type: SLIDING,
             payload: Object.assign(
@@ -115,7 +112,6 @@ export const SliderState = ({children}) => {
         })
 
         if (state.coords.startX && state.coords.endX) {
-
             if (state.coords.startX > state.coords.endX) {
                 changeSlideHandler(state.activeIndex + 1, -100)
             }
@@ -123,6 +119,7 @@ export const SliderState = ({children}) => {
                 changeSlideHandler(state.activeIndex - 1, 100)
             }
         }
+
         dispatch({
             type: SLIDING, payload: Object.assign(
                 state.coords,
@@ -132,7 +129,6 @@ export const SliderState = ({children}) => {
                 }
             )
         })
-
     }
 
     return (

@@ -15,7 +15,7 @@ export const sliderReducer = (state, action) => {
         case SET_ACTIVE_SLIDES:
             return {
                 ...state,
-                activeSlides:action.payload
+                activeSlides: action.payload
             }
         case SET_TIME:
             return {

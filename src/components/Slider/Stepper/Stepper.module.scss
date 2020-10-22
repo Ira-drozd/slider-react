@@ -3,6 +3,10 @@
   flex-wrap: wrap;
   margin: 0 50px;
 
+  @media (max-width: 500px) {
+    margin: 0;
+  }
+
   .point {
     margin: 10px;
     cursor: pointer;
@@ -11,7 +15,7 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
 
-    &:hover{
+    &:hover {
       background: rgba(255, 255, 255, 0.7);
     }
 

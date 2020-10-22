@@ -1,8 +1,10 @@
+### `Description:`
 This project was create with React JS.
-description:
-Yoy can set settings and slides for slider in file src/components/settingSlider.js.
-In the setting file you can set Time Transition fore slides,
- interval Time Autoplay, slides. Each slide did contain: or or or or React Component.
+
+You can set slider settings and slides in file src/components/settingSlider.js.
+
+In the setting file you can set the transition time between slides,
+interval autoplay, slides (image and/or React Component).
 
 ### `Functionality:`
 

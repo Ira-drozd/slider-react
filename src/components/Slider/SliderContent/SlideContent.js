@@ -3,7 +3,7 @@ import classes from './SlideContent.module.scss'
 import SlideHeader from "./SlideHeader/SlideHeader";
 import {SliderContext} from '../../../context/sliderContext'
 
-const SlideContent = (props) => {
+const SlideContent = () => {
     const {
         position,
         time,
@@ -15,21 +15,7 @@ const SlideContent = (props) => {
 
     const content =
         activeSlides.map((slide, index) => {
-
-                let mainBackground = {
-                    background: '#000'
-                }
-                if (slide.image) {
-                    mainBackground = {
-                        backgroundImage: `url(${slide.image})`
-                    }
-                }
-                if (slide.background) {
-                    mainBackground = {
-                        background: slide.background
-                    }
-                }
-
+                const mainBackground = slide.image ? {backgroundImage: `url(${slide.image})`} : {background: '#000'}
 
                 return (
                     <div
@@ -42,17 +28,14 @@ const SlideContent = (props) => {
                         onTouchEnd={e => handlerOnUp(e.changedTouches[0].clientX)}
                     >
                         {
-                            slide.header
-                            ?<SlideHeader header={slide.header}/>
-                            :null
+                            slide.component
+                                ? slide.component
+                                : <SlideHeader header={slide.header}/>
                         }
-
-
                     </div>
                 )
             }
         )
-
 
     return (
         <div className={classes.SliderContent}
@@ -61,10 +44,7 @@ const SlideContent = (props) => {
                  transition: `${time}ms ease-in-out`
              }}
         >
-            {
-                content
-            }
-
+            {content}
         </div>
     )
 };

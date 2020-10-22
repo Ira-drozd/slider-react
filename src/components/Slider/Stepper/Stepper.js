@@ -5,7 +5,7 @@ import {slides} from "../../settingsSlider";
 const Stepper = ({activeIndex, setNewSlides}) => {
 
     const content = slides.map((point, index) => {
-        const cls = [classes.point]
+            const cls = [classes.point]
 
             if (activeIndex === index) {
                 cls.push(classes.active)
@@ -15,9 +15,7 @@ const Stepper = ({activeIndex, setNewSlides}) => {
                 <div
                     className={cls.join(' ')}
                     key={index}
-                    onClick={() => setNewSlides(index)
-
-                    }
+                    onClick={() => setNewSlides(index)}
                 >
                 </div>
             )

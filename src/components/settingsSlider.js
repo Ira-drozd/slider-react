@@ -4,6 +4,7 @@ import Slide3 from '../slides/ImageSlides/3.jpg'
 import Slide4 from '../slides/ImageSlides/4.jpg'
 import Slide5 from '../slides/ImageSlides/5.jpg'
 import React from "react";
+import TestSlideComponent from "../slides/TestSlideComponent/TestSlideComponent";
 
 export const settingTimeTransition = 500
 
@@ -17,7 +18,7 @@ export const slides = [
     {
         header: 'Slide 2',
         image: Slide2
-    },{
+    }, {
         header: 'Slide 3',
         image: Slide3
     },
@@ -26,14 +27,10 @@ export const slides = [
         image: Slide4
     },
     {
-        header: 'Slide 5',
-        image: Slide5
+        image: Slide5,
+        component: <TestSlideComponent/>
     },
     {
-        header: 'Slide 6 — in setting selected pink background',
-        background: "rgba(243,144,171,0.93)"
-    },
-    {
-        header: 'Slide 7 — default (no params in setting)',
+        header: 'Slide 6 — default (no params in setting)',
     }
 ]
